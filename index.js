@@ -85,7 +85,30 @@ inquirer
     let github = response.github;
     let email = response.email;
 
-    let generate = `${title}`;
+    let generate = 
+    
+`# ${title}
+
+## Project Description
+${description}       
+## Installation
+${installation}
+## Usage
+${usage}
+## Contribution Guidelines
+${guidelines}
+## Test Instructions
+${test}
+## License
+${license}
+## Github
+- [Link to Github](https://www.github.com/${github})
+## Questions
+If you have anyquestions please feel free to email me
+- [${email}](${email})
+© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.`;
+    
+    
     fs.writeFile("README.md", generate, (err) => 
       err ? console.error(err) : console.log("Success!")
       );
