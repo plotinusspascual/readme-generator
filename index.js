@@ -72,5 +72,23 @@ inquirer
 // WHEN I click on the links in the Table of Contents
 // THEN I am taken to the corresponding section of the README
   ])
+  .then((response) => {
+    console.log(response);
+
+    let title = response.title;
+    let description = response.description;
+    let installation = response.installation;
+    let usage = response.usage;
+    let guidelines = response.guidelines;
+    let test = response.test;
+    let license = response.license;
+    let github = response.github;
+    let email = response.email;
+
+    let generate = `${title}`;
+    fs.writeFile("README.md", generate, (err) => 
+      err ? console.error(err) : console.log("Success!")
+      );
+  });
 
 
