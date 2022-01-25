@@ -4,6 +4,7 @@
 - [Description](#project-description)
 - [Installation](#installation)
 - [Test Instructions](#test-instructions)
+- [Demo](#walkthrough-video)
 - [License](#license)
 - [Contact](#github)
 ## Project Description
@@ -32,6 +33,9 @@ How to view the project:
 - A file called "generatedREADME.md" is made inside the working folder
 - Copy and Paste the content inside that file into your README file
 - You now have a generated README
+
+## Walkthrough Video
+- [Walkthrough Video](https://youtu.be/gaVz0rA_frQ)
 
 ## Screenshots
 Terminal Prompts
