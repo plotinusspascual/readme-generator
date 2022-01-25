@@ -88,7 +88,14 @@ inquirer
     let generate = 
     
 `# ${title}
-
+## Table of Contents
+-[Description](#Project-Description)
+-[Installation](#installation)
+-[Usage Information](#usage)
+-[Guidelines Contribution](#guidelines)
+-[Test Instructions](#test)
+-[License](#license)
+-[Contact](#github)
 ## Project Description
 ${description}       
 ## Installation
@@ -106,6 +113,7 @@ ${license}
 ## Questions
 If you have anyquestions please feel free to email me
 - [${email}](${email})
+
 © 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.`;
     
     
