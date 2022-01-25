@@ -1,5 +1,6 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
+const { isBuffer } = require('lodash');
 
 // GIVEN a command-line application that accepts user input
 
@@ -53,8 +54,6 @@ inquirer
       choices: ["Apache","Boost","BSD","Eclipse", "GNU","IBM","ISC","MIT","Mozilla","Unlicense"],
       name: "license",
     },
-// THEN a badge for that license is added near the top of the README and a 
-// notice is added to the section of the README entitled License that explains which license the application is covered under
 // WHEN I enter my GitHub username
     {
       type: "input",
@@ -69,8 +68,6 @@ inquirer
       name: "email"
     },
 // THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
-// WHEN I click on the links in the Table of Contents
-// THEN I am taken to the corresponding section of the README
   ])
   .then((response) => {
     console.log(response);
@@ -84,10 +81,47 @@ inquirer
     let license = response.license;
     let github = response.github;
     let email = response.email;
-
+// "Apache","Boost","BSD","Eclipse", "GNU","IBM","ISC","MIT","Mozilla","Unlicense"
+// THEN a badge for that license is added near the top of the README and a 
+// notice is added to the section of the README entitled License that explains which license the application is covered under
+    let badge;
+    switch(license){
+      case 'Apache':
+        badge = "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
+        break;
+      case 'Boost':
+        badge = "[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)";
+        break;
+      case 'BSD':
+        badge = "[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)";
+        break;
+      case 'Eclipse':
+        badge = "[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)](https://opensource.org/licenses/EPL-1.0)";
+        break;
+      case 'GNU':
+        badge = "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
+        break;
+      case 'IBM':
+        badge = "[![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)";
+        break;
+      case 'ISC':
+        badge = "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)";
+        break;
+      case 'MIT':
+        badge = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+        break;
+      case 'Mozilla':
+        badge = "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)";
+        break;
+      case 'Unlicense':
+        badge = "[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)";
+        break;
+    }
+// WHEN I click on the links in the Table of Contents
+// THEN I am taken to the corresponding section of the README
     let generate = 
-    
-`# ${title}
+`${badge}
+# ${title}
 ## Table of Contents
 -[Description](#Project-Description)
 -[Installation](#installation)
