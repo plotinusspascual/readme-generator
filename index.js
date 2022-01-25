@@ -24,47 +24,47 @@ inquirer
 // Description, Installation, Usage, Contributing, and Tests
     {
       type: "input",
-      message: "Enter a description of your project",
+      message: "Enter a description of your project:",
       name: "description"
     },
     {
       type: "input",
-      message: "Enter installation instructions for your project",
+      message: "Enter installation instructions for your project:",
       name: "installation"
     },
     {
       type: "input",
-      message: "Enter usage information",
+      message: "Enter usage information:",
       name: "usage"
     },
     {
       type: "input",
-      message: "Enter any contribution guidelines",
+      message: "Enter any contribution guidelines:",
       name: "guidelines"
     },
     {
       type: "input",
-      message: "Enter test instructions",
+      message: "Enter test instructions:",
       name: "test"
     },
 // WHEN I choose a license for my application from a list of options
     {
       type: "list",
-      message: "Choose a license for your application",
+      message: "Choose a license for your application:",
       choices: ["Apache","Boost","BSD","Eclipse", "GNU","IBM","ISC","MIT","Mozilla","Unlicense"],
       name: "license",
     },
 // WHEN I enter my GitHub username
     {
       type: "input",
-      message: "Enter Github username",
+      message: "Enter Github username:",
       name: "github"
     },
 // THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile
 // WHEN I enter my email address
     {
       type: "input",
-      message: "Enter email address",
+      message: "Enter email address:",
       name: "email"
     },
 // THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
@@ -123,13 +123,13 @@ inquirer
 `${badge}
 # ${title}
 ## Table of Contents
--[Description](#Project-Description)
--[Installation](#installation)
--[Usage Information](#usage)
--[Guidelines Contribution](#guidelines)
--[Test Instructions](#test)
--[License](#license)
--[Contact](#github)
+- [Description](#project-description)
+- [Installation](#installation)
+- [Usage Information](#usage)
+- [Guidelines Contribution](#contribution-guidelines)
+- [Test Instructions](#test-instructions)
+- [License](#license)
+- [Contact](#github)
 ## Project Description
 ${description}       
 ## Installation
@@ -151,7 +151,7 @@ If you have anyquestions please feel free to email me
 © 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.`;
     
     
-    fs.writeFile("README.md", generate, (err) => 
+    fs.writeFile("generatedREADME.md", generate, (err) => 
       err ? console.error(err) : console.log("Success!")
       );
   });
